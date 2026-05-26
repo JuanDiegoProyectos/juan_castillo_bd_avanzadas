@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:element name="ladrillera">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="departamento_recursos_humanos" type="DepartamentoRecursosHumanosType"/>
+      </xs:sequence>
+      <xs:attribute name="nombre" type="xs:string" use="required"/>
+      <xs:attribute name="fechaGeneracion" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="DepartamentoRecursosHumanosType">
+    <xs:sequence>
+      <xs:element name="departamento" type="DepartamentoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DepartamentoType">
+    <xs:sequence>
+      <xs:element name="nombre" type="TextoNoVacioType"/>
+      <xs:element name="ciudad" type="TextoNoVacioType"/>
+      <xs:element name="direccion" type="TextoNoVacioType" minOccurs="0"/>
+      <xs:element name="empleados" type="EmpleadosType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="EmpleadosType">
+    <xs:sequence>
+      <xs:element name="empleado" type="EmpleadoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EmpleadoType">
+    <xs:sequence>
+      <xs:element name="nombres" type="TextoNoVacioType"/>
+      <xs:element name="apellidos" type="TextoNoVacioType"/>
+      <xs:element name="correo" type="CorreoType"/>
+      <xs:element name="telefono" type="TextoNoVacioType" minOccurs="0"/>
+      <xs:element name="fecha_contratacion" type="xs:date"/>
+      <xs:element name="cargo" type="TextoNoVacioType"/>
+      <xs:element name="salario" type="SalarioType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="TextoNoVacioType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CorreoType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SalarioType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

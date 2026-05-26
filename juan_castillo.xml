@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ladrillera nombre="Ladrillera Superior S.A.S." fechaGeneracion="2026-05-25">
+  <departamento_recursos_humanos>
+    <departamento id="10">
+      <nombre>Administracion y Recursos Humanos</nombre>
+      <ciudad>Soacha</ciudad>
+      <direccion>Planta principal de produccion</direccion>
+      <empleados>
+        <empleado id="100">
+          <nombres>Juan Diego</nombres>
+          <apellidos>Castillo Montano</apellidos>
+          <correo>juan.castillo@ladrillerasuperior.com</correo>
+          <telefono>3125556537</telefono>
+          <fecha_contratacion>2024-04-20</fecha_contratacion>
+          <cargo>Analista de informacion de recursos humanos</cargo>
+          <salario>4200000.00</salario>
+        </empleado>
+        <empleado id="101">
+          <nombres>Andres</nombres>
+          <apellidos>Mora</apellidos>
+          <correo>andres.mora@ladrillerasuperior.com</correo>
+          <telefono>3001112233</telefono>
+          <fecha_contratacion>2023-08-14</fecha_contratacion>
+          <cargo>Coordinador de nomina y asistencia</cargo>
+          <salario>3900000.00</salario>
+        </empleado>
+      </empleados>
+    </departamento>
+    <departamento id="20">
+      <nombre>Produccion y Hornos</nombre>
+      <ciudad>Soacha</ciudad>
+      <direccion>Zona de hornos y secado</direccion>
+      <empleados>
+        <empleado id="200">
+          <nombres>Carlos</nombres>
+          <apellidos>Ramirez</apellidos>
+          <correo>carlos.ramirez@ladrillerasuperior.com</correo>
+          <telefono>3017778899</telefono>
+          <fecha_contratacion>2022-03-01</fecha_contratacion>
+          <cargo>Jefe de turno de horno</cargo>
+          <salario>3500000.00</salario>
+        </empleado>
+      </empleados>
+    </departamento>
+  </departamento_recursos_humanos>
+</ladrillera>
